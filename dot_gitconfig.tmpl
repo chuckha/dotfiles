@@ -1,0 +1,13 @@
+[alias]
+	st = status
+	co = checkout
+	update = commit --amend -C HEAD
+[user]
+	name = chuckha
+	email = {{ .email | quote }}
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+
+[init]
+	defaultBranch = main
