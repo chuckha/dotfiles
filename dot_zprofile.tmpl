@@ -6,6 +6,6 @@ alias k=kubectl
 
 export DOCKER_SCAN_SUGGEST=false
 {{- if eq .chezmoi.hostname "okinawa" }}
-export QBT_USER=
-export QBT_PASS={{- (index (onepassword "sksmbwwhed5lz5dk22mkzqidvu".fields 8).value) }}
+export QBT_USER={{- (index (onepassword "sksmbwwhed5lz5dk22mkzqidvu").fields 7).value | quote}}
+export QBT_PASS={{- (index (onepassword "sksmbwwhed5lz5dk22mkzqidvu").fields 8).value | quote}}
 {{- end }}
