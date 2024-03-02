@@ -2,9 +2,10 @@ alias ls='ls --color'
 eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH="/Users/cha/bin:/Users/cha/sdk/latest/bin:/Users/cha/go/bin:$PATH"
 export PATH=/Users/cha/Library/Python/3.10/bin:$PATH
-# [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 alias k=kubectl
 
 export DOCKER_SCAN_SUGGEST=false
+{{- if eq .chezmoi.hostname "okinawa" }}
 export QBT_USER=
-export QBT_PASS=
+export QBT_PASS={{- (index (onepassword "sksmbwwhed5lz5dk22mkzqidvu".fields 8).value) }}
+{{- end }}
